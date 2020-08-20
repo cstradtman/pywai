@@ -1,5 +1,6 @@
 
 #!/usr/bin/env python3
+
 """
 Very simple HTTP server responding to user with Get request information
 Usage::
@@ -40,7 +41,7 @@ def run(server_class=HTTPServer, handler_class=S, port=8080):
         pass
     httpd.server_close()
     logging.info('Stopping httpd...\n')
-    
+
 
 if __name__ == '__main__':
     from sys import argv
