@@ -100,4 +100,12 @@ jobs:
 
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
-
+          
+      - name: push Docker image to gitlab
+        uses: docker/build-push-action@v1
+        with:
+          username: chris@chrisstradtman.com  
+          password: ${{ secrets.CGS_SECRET }}
+          registry: registry.gitlab.com
+          repository: cstradtman/pywai
+          tags: $IMAGE_NAME $IMAGE_ID:$VERSION
